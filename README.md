@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TaskFlow - Modern Todo Application
 
-## Getting Started
+A streamlined, responsive todo application built with Next.js, TypeScript, and React Query that allows users to manage tasks effectively with filtering and persistence capabilities.
 
-First, run the development server:
+## Features
+
+### Core Functionality
+
+- Create, read, update, and delete tasks
+- Filter tasks by:
+  - All
+  - Active
+  - Completed
+- Data persistence using localStorage
+- CRUD operations with React Query custom hooks
+
+### Bonus Features
+
+- ShadCN UI components for enhanced UI elements
+- Click-to-edit task functionality
+- Task summary display (e.g., "3 active, 1 completed")
+- Responsive design for all devices
+- Smooth Notification for CRUD operations
+- TypeScript for type safety
+
+## Technologies Used
+
+- Next.js
+- TypeScript
+- React Query for state management
+- Tailwind CSS for styling
+- ShadCN UI component library
+- localStorage for data persistence
+
+## Project Setup
+
+### Clone the repository
+
+```bash
+git clone https://github.com/pscon/nextjs-todo-app
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Run tests
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run test
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/` - Next.js app directory with file-based routing
+- `components/` - Reusable UI components
+- `hooks/` - Custom React Query hooks for data operations
+- `types/` - TypeScript type definitions
+- `lib/utils` - Helper functions and utilities
+- `public/` - Static assets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Implementation Details
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Task management with full CRUD functionality
+- React Query for efficient state management
+- Custom hooks for encapsulated data operations:
+  - `useTodos()` - Fetches all tasks
+  - `useAddTodo()` - Adds a new task
+  - `useUpdateTodo()` - Updates existing task
+  - `useDeleteTodo()` - Removes a task
+- Tailwind CSS for responsive styling
+- ShadCN UI for accessible, customizable components
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application can be deployed to Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+## Contact
+
+- GitHub: [pscon](https://github.com/pscon)
+- LinkedIn: Ekunola Paul
+- Email: your.email@example.com
+
+## Author
+
+Ekunola Paul

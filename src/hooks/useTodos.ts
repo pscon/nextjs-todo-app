@@ -24,7 +24,7 @@ export const useAddTodo = () => {
 };
 
 // custom hooks for updating a particular todo
-export const useUpdateTodo = (p0: { onSuccess: () => void; }) => {
+export const useUpdateTodo = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
@@ -37,7 +37,7 @@ export const useUpdateTodo = (p0: { onSuccess: () => void; }) => {
 };
 
 // custom hooks for deleting a particular todo
-export const useDeleteTodo = (p0: { onSuccess: () => void; }) => {
+export const useDeleteTodo = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
