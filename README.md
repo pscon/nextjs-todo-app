@@ -83,17 +83,15 @@ npm run test
 
 ## Deployment
 
-The application can be deployed to Vercel:
+The application has been successfully deployed on Vercel.
 
 ```bash
 npm run build
 ```
 
-## Contact
+## Deployed URL
 
-- GitHub: [pscon](https://github.com/pscon)
-- LinkedIn: Ekunola Paul
-- Email: your.email@example.com
+[pscon-todoify](https://nextjs-todo-app-zeeo.vercel.app/)
 
 ## Author
 

@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
       <div className="flex-grow max-w-xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8 text-center">Task Manager</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center">Task Manager App</h1>
         <TodoApp />
       </div>
 
