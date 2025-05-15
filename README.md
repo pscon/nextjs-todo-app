@@ -1,4 +1,4 @@
-# TaskFlow - Modern Todo Application
+# Pscon-Todoify - Modern Todo Application
 
 A streamlined, responsive todo application built with Next.js, TypeScript, and React Query that allows users to manage tasks effectively with filtering and persistence capabilities.
 
