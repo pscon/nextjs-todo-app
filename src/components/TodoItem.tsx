@@ -5,7 +5,6 @@ import { useUpdateTodo, useDeleteTodo } from '../hooks/useTodos';
 import { Trash2, Edit, Check, X } from 'lucide-react';
 import { useState } from 'react';
 import { Input } from '../components/ui/Input';
-import { showSuccessToast } from './notifications/ToastNotification';
 
 interface TodoItemProps {
   todo: Todo;
@@ -15,17 +14,9 @@ export function TodoItem({ todo }: TodoItemProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [editValue, setEditValue] = useState(todo?.title);
 
-const updateTodo = useUpdateTodo({
-    onSuccess: () => {     
-      showSuccessToast('Todo updated successfully!');
-    }
-  });
-  
-  const deleteTodo = useDeleteTodo({
-    onSuccess: () => {
-      showSuccessToast('Todo deleted successfully!');
-    }
-  });
+  const updateTodo = useUpdateTodo();
+  const deleteTodo = useDeleteTodo();
+
 
   const handleToggleCompleted = () => {
     updateTodo.mutate({
@@ -66,7 +57,7 @@ const updateTodo = useUpdateTodo({
           id={`todo-${todo.id}`}
           className='text-black cursor-pointer'
         />
-        
+
         {isEditing ? (
           <div className="flex gap-2 flex-1 ">
             <Input
@@ -91,7 +82,7 @@ const updateTodo = useUpdateTodo({
           </label>
         )}
       </div>
-      
+
       {!isEditing && (
         <div className="flex gap-1 ">
           <Button className='cursor-pointer ' size="icon" variant="ghost" onClick={handleEdit}>
