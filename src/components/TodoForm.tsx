@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useAddTodo } from '@/hooks/useTodos';
 import { Input } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
+import { showSuccessToast } from './notifications/ToastNotification';
 
 export function TodoForm() {
   const [title, setTitle] = useState('');
@@ -14,6 +15,7 @@ export function TodoForm() {
       addTodo.mutate(title.trim(), {
         onSuccess: () => {
           setTitle('');
+          showSuccessToast('Todo added successfully!');
         }
       });
     }
@@ -22,7 +24,7 @@ export function TodoForm() {
   return (
     <form onSubmit={handleSubmit} className="flex gap-2 mb-6">
       <Input
-        type="text"
+        type="search"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Add a new task..."

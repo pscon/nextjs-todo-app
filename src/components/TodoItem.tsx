@@ -5,6 +5,7 @@ import { useUpdateTodo, useDeleteTodo } from '../hooks/useTodos';
 import { Trash2, Edit, Check, X } from 'lucide-react';
 import { useState } from 'react';
 import { Input } from '../components/ui/Input';
+import { showSuccessToast } from './notifications/ToastNotification';
 
 interface TodoItemProps {
   todo: Todo;
@@ -12,14 +13,24 @@ interface TodoItemProps {
 
 export function TodoItem({ todo }: TodoItemProps) {
   const [isEditing, setIsEditing] = useState(false);
-  const [editValue, setEditValue] = useState(todo.title);
-  const updateTodo = useUpdateTodo();
-  const deleteTodo = useDeleteTodo();
+  const [editValue, setEditValue] = useState(todo?.title);
+
+const updateTodo = useUpdateTodo({
+    onSuccess: () => {     
+      showSuccessToast('Todo updated successfully!');
+    }
+  });
+  
+  const deleteTodo = useDeleteTodo({
+    onSuccess: () => {
+      showSuccessToast('Todo deleted successfully!');
+    }
+  });
 
   const handleToggleCompleted = () => {
     updateTodo.mutate({
       ...todo,
-      completed: !todo.completed
+      completed: !todo?.completed
     });
   };
 

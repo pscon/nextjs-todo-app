@@ -22,7 +22,7 @@ export function TodoFilter({ filter, setFilter, counts }: TodoFilterProps) {
                     size="sm"
                     className={`cursor-pointer ${filter === 'all' ? 'bg-white text-black' : ''}`}
                 >
-                    All ({counts.all})
+                    All ({counts?.all})
                 </Button>
                 <Button
                     variant={filter === 'active' ? 'default' : 'outline'}
@@ -30,7 +30,7 @@ export function TodoFilter({ filter, setFilter, counts }: TodoFilterProps) {
                     size="sm"
                     className={`cursor-pointer ${filter === 'active' ? 'bg-white text-black' : ''}`}
                 >
-                    Active ({counts.active})
+                    Active ({counts?.active})
                 </Button>
                 <Button
                     variant={filter === 'completed' ? 'default' : 'outline'}
@@ -38,11 +38,11 @@ export function TodoFilter({ filter, setFilter, counts }: TodoFilterProps) {
                     size="sm"
                     className={`cursor-pointer ${filter === 'completed' ? 'bg-white text-black' : ''}`}
                 >
-                    Completed ({counts.completed})
+                    Completed ({counts?.completed})
                 </Button>
             </div>
-            <div className="text-sm text-gray-500">
-                {counts.active} active, {counts.completed} completed
+            <div className="text-sm text-gray-300">
+                {counts?.active} active, {counts?.completed} completed
             </div>
         </div>
     );
